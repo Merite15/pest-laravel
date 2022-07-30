@@ -1,18 +1,27 @@
 <?php
 
-namespace Tests\Unit;
+use App\Models\User;
 
-use PHPUnit\Framework\TestCase;
+beforeAll(function () {
+    dumpHelloWorld();
+});
 
-class ExampleTest extends TestCase
-{
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function test_that_true_is_true()
-    {
-        $this->assertTrue(true);
-    }
-}
+beforeEach(function () {
+    User::factory(10)->create();
+});
+
+it('test name', function ($name) {
+    expect($name)->toBeIn(['John', 'Jane', 'paul', 'henri']);
+})->with('names');
+
+it('ensures that 10 users are retuned', function () {
+    expect(User::count())->toEqual(10);
+
+    expect(User::all())->toHaveCount(10);
+});
+
+it('ensures that 10 users are created 2', function () {
+    expect(User::count())->toEqual(10);
+
+    expect(User::all())->toHaveCount(10);
+});

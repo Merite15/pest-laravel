@@ -67,3 +67,13 @@ php artisan make:model Post -mf
 <!-- see help to create model -->
 php artisan help make:model
 
+<!-- add pest -->
+composer require pestphp/pest --dev --with-all-dependencies
+
+composer require pestphp/pest-plugin-laravel --dev
+
+php artisan pest:install
+
+./vendor/bin/pest --init
+
+./vendor/bin/pest
