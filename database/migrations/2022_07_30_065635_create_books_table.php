@@ -24,15 +24,6 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
         });
-
-        DB::table('books')->insert([
-            'title' => 'The Great Gatsby',
-            'author' => 'F. Scott Fitzgerald',
-            'published_year' => 1925,
-            'description' => 'The Great Gatsby is a 1925 novel written by F. Scott Fitzgerald',
-            'price' => 10.00,
-            'user_id' => 1,
-        ]);
     }
 
     /**

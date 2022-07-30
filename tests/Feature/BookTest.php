@@ -1,11 +1,10 @@
 <?php
 
-use App\Models\User;
 use App\Models\Book;
-
+use App\Models\User;
 use function Pest\Laravel\actingAs;
 
-it('create a book for a user', function(){
+it('create a book for a user', function () {
     expect(Book::all())->toHaveCount(0);
 
     actingAs(User::factory()->create())->post('books', [
