@@ -29,7 +29,7 @@ create a file phpstan.neon for config({
 
         - app
 
-    level: 9
+    level: 7
 
     ignoreErrors:
 
